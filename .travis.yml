@@ -27,6 +27,13 @@ matrix:
       gemfile: test/rails_5.0.gemfile
       env: RAILS_VERSION=5.0
 
+    # This below is a temporary fix to bypass these bundler + JRuby bugs:
+    #  https://github.com/bundler/bundler/issues/4975
+    #  https://github.com/bundler/bundler/issues/4984
+    - rvm: jruby-19mode
+      gemfile: test/rails_4.2.gemfile
+      env: RAILS_VERSION=4.2
+
   include:
     # ruby / rails edge
     
